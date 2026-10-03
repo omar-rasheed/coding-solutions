@@ -4,15 +4,16 @@ int main() {
     int a, b;
     scanf("%d\n%d", &a, &b);
 
-    const char* words[] = {
-        "", "one", "two", "three", "four", 
-        "five", "six", "seven", "eight", "nine"
+    // Array of English words for numbers 1 to 9 (0-indexed)
+    char *words[] = {
+        "one", "two", "three", "four", "five",
+        "six", "seven", "eight", "nine"
     };
 
-    for (int n = a; n <= b; n++) {
-        if (n >= 1 && n <= 9) {
-            printf("%s\n", words[n]);
-        } else if (n % 2 == 0) {
+    for (int i = a; i <= b; i++) {
+        if (i >= 1 && i <= 9) {
+            printf("%s\n", words[i - 1]);
+        } else if (i % 2 == 0) {
             printf("even\n");
         } else {
             printf("odd\n");
@@ -21,3 +22,4 @@ int main() {
 
     return 0;
 }
+
