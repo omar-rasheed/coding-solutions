@@ -77,7 +77,7 @@ The only line contains $2$ space-separated integers, $n$ and $k$.
 **Language:** C  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T06:10:47.919Z  
+**Submitted:** 2026-10-03T09:41:58.858Z  
 
 ```c
 #include <stdio.h>
@@ -87,20 +87,21 @@ void calculate_the_maximum(int n, int k) {
     int max_or = 0;
     int max_xor = 0;
 
+    // Iterate through all pairs (a, b) where 1 <= a < b <= n
     for (int a = 1; a <= n; a++) {
         for (int b = a + 1; b <= n; b++) {
-            int and_val = a & b;
-            int or_val = a | b;
-            int xor_val = a ^ b;
+            int current_and = a & b;
+            int current_or  = a | b;
+            int current_xor = a ^ b;
 
-            if (and_val < k && and_val > max_and) {
-                max_and = and_val;
+            if (current_and > max_and && current_and < k) {
+                max_and = current_and;
             }
-            if (or_val < k && or_val > max_or) {
-                max_or = or_val;
+            if (current_or > max_or && current_or < k) {
+                max_or = current_or;
             }
-            if (xor_val < k && xor_val > max_xor) {
-                max_xor = xor_val;
+            if (current_xor > max_xor && current_xor < k) {
+                max_xor = current_xor;
             }
         }
     }
