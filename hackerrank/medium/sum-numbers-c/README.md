@@ -46,20 +46,25 @@ Print the sum and difference of both integers separated by a space on the first 
 **Language:** C  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T05:41:45.321Z  
+**Submitted:** 2026-10-03T09:35:47.712Z  
 
 ```c
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int a, b;
     float c, d;
 
+    // Read two integers from the first line
     scanf("%d %d", &a, &b);
+
+    // Read two floats from the second line
     scanf("%f %f", &c, &d);
 
+    // Print integer sum and difference
     printf("%d %d\n", a + b, a - b);
+
+    // Print float sum and difference rounded to 1 decimal place
     printf("%.1f %.1f\n", c + d, c - d);
 
     return 0;
