@@ -63,34 +63,37 @@ Note: I/O will be automatically handled.
 **Language:** C  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T06:01:56.474Z  
+**Submitted:** 2026-10-03T09:38:46.596Z  
 
 ```c
 #include <stdio.h>
 
+/*
+ * Function to find and return the maximum of four integers.
+ */
 int max_of_four(int a, int b, int c, int d) {
     int max = a;
-
-    if (b > max)
+    
+    if (b > max) {
         max = b;
-    if (c > max)
+    }
+    if (c > max) {
         max = c;
-    if (d > max)
+    }
+    if (d > max) {
         max = d;
-
+    }
+    
     return max;
 }
 
 int main() {
     int a, b, c, d;
-
-    scanf("%d", &a);
-    scanf("%d", &b);
-    scanf("%d", &c);
-    scanf("%d", &d);
-
-    printf("%d\n", max_of_four(a, b, c, d));
-
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    
     return 0;
 }
 
